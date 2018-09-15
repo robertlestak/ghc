@@ -1,0 +1,4 @@
+github.com/atotto/clipboard v0.0.0-20180322013007-5e2c7bddca04 h1:TnVmnVFM0kOpKs3LBc88iitp7eEmeIXT+sn6yBgG2lY=
+github.com/atotto/clipboard v0.0.0-20180322013007-5e2c7bddca04/go.mod h1:ZY9tmq7sm5xIbd9bOK4onWV4S6X0u6GY7Vn0Yu86PYI=
+github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d h1:xDfNPAt8lFiC1UJrqV3uuy861HCTo708pDMbjHHdCas=
+github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d/go.mod h1:6QX/PXZ00z/TKoufEY6K/a0k6AhaJrQKdFe6OfVXsa4=

@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os/user"
+	"os/exec"
 	"path"
 )
 
@@ -24,6 +25,8 @@ var GITHUB_API = "https://api.github.com/user/repos"
 func main() {
 	priv := flag.Bool("p", true, "Private Repository")
 	desc := flag.String("d", "", "Description")
+	initialize := flag.Bool("i", false, "Initialize")
+	initbranch := flag.String("b", "origin", "Initialize Branch")
 	org := flag.String("o", "", "Organization")
 	clip := flag.Bool("c", false, "Copy clone URL to clipboard")
 	clipssh := flag.Bool("s", false, "Copy ssh URL to clipboard")
@@ -98,6 +101,19 @@ func main() {
 	} else if *clip {
 		url = jd["clone_url"].(string)
 		clipboard.WriteAll(url)
+	}
+	if *initialize {
+		icmd := exec.Command("git", "init")
+		ierr := icmd.Run()
+		if ierr != nil {
+			fmt.Println("Init Error:", ierr)
+		}
+		cmds := []string{"remote", "add", *initbranch, url}
+		cmd := exec.Command("git", cmds...)
+		err := cmd.Run()
+		if err != nil {
+			fmt.Println("Remote Add Error:", err)
+		}
 	}
 	fmt.Println(url)
 }
