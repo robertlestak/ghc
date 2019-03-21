@@ -9,8 +9,9 @@ import (
 	"github.com/bgentry/go-netrc/netrc"
 	"io/ioutil"
 	"net/http"
-	"os/user"
+	"os"
 	"os/exec"
+	"os/user"
 	"path"
 )
 
@@ -21,6 +22,7 @@ type Repository struct {
 }
 
 var GITHUB_API = "https://api.github.com/user/repos"
+var version string
 
 func main() {
 	priv := flag.Bool("p", true, "Private Repository")
@@ -30,7 +32,15 @@ func main() {
 	org := flag.String("o", "", "Organization")
 	clip := flag.Bool("c", false, "Copy clone URL to clipboard")
 	clipssh := flag.Bool("s", false, "Copy ssh URL to clipboard")
+	checkver := flag.Bool("v", false, "Display current version")
 	flag.Parse()
+	if *checkver {
+		if version == "" {
+			version = "latest"
+		}
+		fmt.Println(version)
+		os.Exit(0)
+	}
 	args := flag.Args()
 	if len(args) == 0 {
 		fmt.Println("Respository required")

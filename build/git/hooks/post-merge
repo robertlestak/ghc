@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -f ~/Git/devops-aliases/aliases/dl-ghc.sh ]; then
+  ~/Git/devops-aliases/aliases/dl-ghc.sh
+fi
