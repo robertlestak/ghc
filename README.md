@@ -29,6 +29,7 @@ See here (https://help.github.com/articles/creating-a-personal-access-token-for-
 -c	Copy HTTPS URL to clipboard (bool; default: false)
 -d	Description (string; default: nil)
 -o	Organization (string; default: nil - must be a member)
+-i	Initialize git repository
 -p	Private Repository (bool; default: true)
 -s	Copy ssh URL to clipboard (bool; default: false)
 ````

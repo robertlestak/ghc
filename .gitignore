@@ -1,3 +1,4 @@
 ghc
 *.swp
 dist
+.DS_Store
