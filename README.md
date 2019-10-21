@@ -16,7 +16,7 @@ To communicate with the GitHub API, you must add your GitHub access token to you
 ### Example .netrc
 
 ````
-machine api.github.com login [username] [token]
+machine api.github.com login [token]
 ````
 
 See here (https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) for more detailed steps to create an access token.
